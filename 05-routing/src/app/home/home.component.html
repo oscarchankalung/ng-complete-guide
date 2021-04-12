@@ -1,0 +1,12 @@
+<h4>Welcome to Server Manager 4.0</h4>
+<p>Manage your Servers and Users.</p>
+<div class="btn-toolbar" style="margin-bottom: 10px;">
+  <button class="btn btn-primary" (click)="onLoad('/servers')">Load Servers</button>
+  <button class="btn btn-primary" (click)="onLoad('/users')">Load Users</button>
+  <button class="btn btn-info" (click)="onLoadServer(1)">Load Server 1</button>
+</div>
+<p>Authenticated: {{ this.authService.loggedIn }}</p>
+<div class="btn-toolbar">
+  <button class="btn btn-success" (click)="onLogin()">Login</button>
+  <button class="btn btn-danger" (click)="onLogout()">Logout</button>
+</div>

@@ -1,0 +1,49 @@
+{
+	"folders": [
+		{
+			"name": "00-project",
+			"path": "00-project"
+		},
+		{
+			"name": "01-getting-started",
+			"path": "01-getting-started"
+		},
+		{
+			"name": "02-databinding",
+			"path": "02-databinding"
+		},
+		{
+			"name": "03-directives",
+			"path": "03-directives"
+		},
+		{
+			"name": "04-services",
+			"path": "04-services"
+		},
+		{
+			"name": "05-routing",
+			"path": "05-routing"
+		},
+		{
+			"name": "06-observables",
+			"path": "06-observables"
+		},
+		{
+			"name": "07-forms-template-driven",
+			"path": "07-forms-template-driven"
+		},
+		{
+			"name": "08-forms-reactive",
+			"path": "08-forms-reactive"
+		},
+		{
+			"name": "09-pipes",
+			"path": "09-pipes"
+		},
+		{
+			"name": "10-http",
+			"path": "10-http"
+		}
+	],
+	"settings": {}
+}

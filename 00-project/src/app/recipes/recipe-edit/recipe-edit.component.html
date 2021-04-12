@@ -1,0 +1,101 @@
+<form [formGroup]="recipeForm" (ngSubmit)="onSubmit()">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="form-group btn-toolbar">
+        <button
+          class="btn btn-success"
+          type="submit"
+          [disabled]="recipeForm.invalid">
+          Save
+        </button>
+        <button
+          class="btn btn-danger"
+          type="button"
+          (click)="onCancel()">
+          Cancel
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input
+          type="text"
+          id="name"
+          class="form-control"
+          formControlName="name">
+      </div>
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea
+          type="text"
+          id="description"
+          class="form-control"
+          formControlName="description"
+          rows="4"
+          style="resize: none;">
+        </textarea>
+      </div>
+      <div class="form-group">
+        <label for="imagePath">Image Path</label>
+        <input
+          type="text"
+          id="imagePath"
+          class="form-control"
+          formControlName="imagePath"
+          #imagePath>
+        </div>
+      <div *ngIf="imagePath.value" style="margin-bottom: 10px;">
+        <img [src]="imagePath.value" class="img-responsive">
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12" formArrayName="ingredients" >
+      <div
+        class="row"
+        *ngIf="ingredientControls.length">
+        <div class="col-xs-6">
+          <label for="ingredientName">Ingredents</label>
+        </div>
+        <div class="col-xs-4">
+          <label for="ingredientAmount">Amount</label>
+        </div>
+      </div>
+      <div
+        class="row"
+        *ngFor="let ingredientControl of ingredientControls; let i = index"
+        [formGroupName]="i"
+        style="margin-top: 10px;">
+        <div class="col-xs-6">
+          <input type="text" class="form-control" formControlName="name">
+        </div>
+        <div class="col-xs-4">
+          <input type="number" class="form-control" formControlName="amount">
+        </div>
+        <div class="col-xs-2">
+          <button
+            class="btn btn-danger"
+            type="button"
+            (click)="onDeleteIngredient(i)">
+            Delete
+          </button>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-xs-12">
+          <button
+            class="btn btn-success"
+            type="button"
+            (click)="onAddIngredient()">
+            Add Ingredents
+          </button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</form>

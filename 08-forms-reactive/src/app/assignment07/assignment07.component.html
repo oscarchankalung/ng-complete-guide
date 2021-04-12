@@ -1,0 +1,53 @@
+<div class="row">
+  <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+    <h3>Assignment 07</h3>
+    <p>Create a Form with the following Controls and Validators</p>
+    <ol>
+      <li>Project Name (should not be empty)</li>
+      <li>Mail (should not be empty and a valid email)</li>
+      <li>Project Status Dropdown, with three values: 'Stable', 'Critical', 'Finished' </li>
+      <li>Submit Button</li>
+    </ol>
+    <p>Add your own Validator which doesn't allow "Test" as a Project Name</p>
+    <p>Also implement that Validator as an async Validator (replace the other one)</p>
+    <p>Upon submitting the form, simply print the value to the console</p>
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+    <form [formGroup]="projectForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="projectName">Project Name</label>
+        <input
+          id="projectName"
+          type="text"
+          class="form-control"
+          formControlName="projectName">
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input
+          id="email"
+          type="email"
+          class="form-control"
+          formControlName="email">
+      </div>
+      <div class="form-group">
+        <label for="projectStatus">Project Status</label>
+        <select
+          name="projectStatus"
+          id="projectStatus"
+          class="form-control"
+          formControlName="projectStatus">
+          <option
+            *ngFor="let projectStatusOption of projectStatusOptions"
+            [value]="projectStatusOption">
+            {{ projectStatusOption }}
+          </option>
+        </select>
+      </div>
+      <button class="btn btn-primary" type="submit">Submit</button>
+    </form>
+  </div>
+</div>

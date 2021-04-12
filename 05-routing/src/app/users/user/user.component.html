@@ -1,0 +1,15 @@
+<p>User with ID {{ user.id }} loaded.</p>
+<p>User name is {{ user.name }}</p>
+<a [routerLink]="['/users', '10', 'Anna']">
+  <button
+    class="btn btn-primary">
+    Load 10/Anna with routerLink
+  </button>
+</a>
+<br>
+<button
+  class="btn btn-primary"
+  style="margin-top: 10px;"
+  (click)="onLoad('11', 'Beta')">
+  Load 11/Beta with Router
+</button>

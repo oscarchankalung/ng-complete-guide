@@ -1,0 +1,24 @@
+<div class="form-group">
+  <label>Server Name (property and event binding)</label>
+  <input
+    type="text"
+    class="form-control"
+    [value]="serverName"
+    (input)="onUpdateServerName($event)">
+</div>
+<div class="form-group">
+  <label>Server Name (two way binding)</label>
+  <input
+    type="text"
+    class="form-control"
+    [(ngModel)]="serverName">
+</div>
+<div class="form-group">
+  <button 
+    class="btn btn-primary"
+    [disabled]="!allowNewServer"
+    (click)="onCreateServer()">Add Server</button>
+</div>
+<p *ngIf="serverCreated;">Server was created, server name is {{ serverName }}.</p>
+<p *ngIf="!serverCreated">No server was created.</p>
+<app-server *ngFor="let server of servers"></app-server>

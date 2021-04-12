@@ -1,0 +1,8 @@
+<div *ngIf="server; else notFoundMessage">
+  <h5>{{ server.name }}</h5>
+  <p>Server status is {{ server.status }}</p>
+  <button class="btn btn-primary" (click)="onEdit()">Edit Server</button>
+</div>
+<ng-template #notFoundMessage>
+  <h5>Sorry - a server with the given id could not be found!</h5>
+</ng-template>
